@@ -1,206 +1,77 @@
-# Funciones que podría usar el instructor
-En este documento se muestran algunas muestras de formatos que se pueden usar en el archivo **README.me** que pueden ser de ayuda para el instructor
+# ![Logo](images/neteclogo.png) 
 
-- [Fragmentos de código](#fragmentos-de-codigo)
-- [Listas](#listas)
-- [Tablas](#tablas)
-- [Insertar imágenes](#imagenes)
-- [Alertas](#alertas)
+**Plataforma de Laboratorios**
 
-# Fragmentos de codigo
+Bienvenido a la **Plataforma de Laboratorios** del curso **Taller Práctico Ingenieros de datos**. Aquí podrás explorar diferentes tecnologías a través de prácticas guiadas. ¡Desarrolla tus habilidades y lleva tus conocimientos al siguiente nivel!
 
+---
 
-## Bloques de código
-Para agregar algún fragmento de código debemos de usar la siguiente sintáxis:
+## 🌟 **Lista de Laboratorios - Taller Práctico Ingenieros de datos**
 
+Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia práctica. Haz clic en los enlaces para comenzar.
 
-### Python
+01. **[Práctica 1: Creación de un usuario en IAM y asignación de políticas](/Capítulo2/lab1.md)**
+      - **Descripción**: Aprenderás a crear usuarios en AWS IAM y asignarles políticas, sentando las bases de una gestión segura y controlada de accesos.
+      - ⏱️ **Duración estimada**: 20 minutos
 
-```python
-import datetime
+02. **[Práctica 2: Configuración de Grupos de Seguridad en AWS](/Capítulo3/lab2.md)**
+      - **Descripción**: Configurarás reglas de entrada y salida para proteger tus recursos en la nube, estableciendo límites claros de acceso a tu infraestructura.
+      - ⏱️ **Duración estimada**: 40 minutos
 
-def str2date(sf:str):#"2020-05-08"
-    datos=sf.split('-')#['2020', '05', '08']
-                #'2020':str->2020:int, '05':str->05:int, '08':str->05:int
-    fecha=datetime.date(int(datos[0]), int(datos[1]), int(datos[2]))
-    return fecha
+03. **[Práctica 3: Lanzamiento de una instancia EC2](/Capítulo3/lab3.md)**
+      - **Descripción**: Pondrás en marcha una máquina virtual en AWS EC2, adquiriendo habilidades clave para desplegar aplicaciones y servicios.
+      - ⏱️ **Duración estimada**: 60 minutos
 
-sf=input("ingrese la fecha YYYY-MM-DD: ")
-fecha=str2date(sf)
-print(fecha)
-print(type(fecha))
-```
+04. **[Práctica 4: Creación de una función Lambda desde cero.](/Capítulo3/lab4.md)**
+      - **Descripción**: Diseñarás una función Lambda desde cero, iniciándote en el modelo serverless para ejecutar código sin preocuparte por servidores.
+      - ⏱️ **Duración estimada**: 120 minutos
 
-### Java
-```java
-public void cleanup() {
-        try {
-            if (connection != null)
-                connection.close();
-        } catch (Exception e) {
-            System.out.println("Excepción capturada: ");
-            e.printStackTrace();
-        }
-    }
-```
+05. **[Práctica 5: Configuración de eventos disparadores (S3 y API Gateway)](/Capítulo3/lab5.md)**
+      - **Descripción**: Vincularás servicios como S3 o API Gateway para disparar funciones automáticamente, creando flujos de trabajo eficientes y automatizados.
+      - ⏱️ **Duración estimada**: 120 minutos
 
+06. **[Práctica 6: Ejecución y monitoreo de funciones Lambda](/Capítulo3/lab6.md)**
+      - **Descripción**: Ejecutarás tu función Lambda y aplicarás herramientas de monitoreo para evaluar su comportamiento y rendimiento en tiempo real.
+      - ⏱️ **Duración estimada**: 120 minutos
 
-### shell
-```shell
-#!/bin/sh
+07. **[Práctica 7: Creación de un bucket S3 y activación de versionamiento](/Capítulo4/lab7.md)**
+      - **Descripción**: Crearás un bucket en Amazon S3 con versionamiento habilitado, preparándote para manejar datos con enfoque en respaldo y recuperación.
+      - ⏱️ **Duración estimada**: 20 minutos
 
-CONTADOR=0
-until [ $CONTADOR – ge 3]]; do
-    echo El contador es $CONTADOR
-    CONTADOR=$(($CONTADOR+1))
-done
-```
+08. **[Práctica 8: Carga y gestión de archivos (almacenamiento histórico / uso frecuente)](/Capítulo4/lab8.md)**
+      - **Descripción**: Subirás, clasificarás y gestionarás archivos en S3, diferenciando entre datos históricos y de uso frecuente para optimizar el almacenamiento.
+      - ⏱️ **Duración estimada**: 120 minutos
 
-### Ruby
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+09. **[Práctica 9: Configuración de permisos y acceso público/privado en Amazon S3](/Capítulo4/lab9.md)**
+      - **Descripción**: Configurarás permisos detallados para controlar el acceso a tus objetos S3, aprendiendo a proteger datos sensibles y compartir los que deben ser públicos.
+      - ⏱️ **Duración estimada**: 40 minutos
 
-### HTML
+10. **[Práctica 10: Configuración de un Cluster de EMR](/Capítulo6/lab10.md)**
+      - **Descripción**: Levantarás un clúster EMR sobre EC2, listo para procesar grandes volúmenes de datos con herramientas como Hadoop y Spark.
+      - ⏱️ **Duración estimada**: 30 minutos
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+11. **[Práctica 11: Configuración de un Cluster Serverless de EMR](/Capítulo6/lab11.md)**
+      - **Descripción**: Probarás el enfoque serverless con EMR, donde podrás ejecutar cargas de trabajo sin gestionar infraestructura directamente.
+      - ⏱️ **Duración estimada**: 30 minutos
 
-```
+12. **[Práctica 12: Desarrollo de un procesamiento utilizando Pyspark en EMR](/Capítulo6/lab12.md)**
+      - **Descripción**: Desarrollarás un script PySpark para procesar datos de forma distribuida, aplicando lógica transformacional sobre grandes volúmenes.
+      - ⏱️ **Duración estimada**: 120 minutos
 
-### Javascript
+13. **[Práctica 13: Uso de la calculadora de precios de AWS.](/Capítulo8/lab13.md)**
+      - **Descripción**: Explorarás la calculadora de costos de AWS para estimar gastos de tus servicios y aprender a planificar soluciones rentables.
+      - ⏱️ **Duración estimada**: 20 minutos
 
-```javascript
-var database=db.getSiblingDB("database")
-var collection=database.getCollection("people")
+14. **[Práctica 14: Creación de alertas en CloudWatch para controlar los costos.](/Capítulo8/lab14.md)**
+      - **Descripción**: Configurarás alarmas en Amazon CloudWatch que te permitirán detectar y reaccionar ante aumentos inesperados en el uso de recursos, ayudándote a mantener el control de los costos en tu cuenta de AWS.
+      - ⏱️ **Duración estimada**: 20 minutos
 
-var data=[
-    {name:"edgar"},
-    {name:"juan"},
-    {name:"alicia"}
-]
+---
 
-data.forEach(t=>{
-    console.log(t)
-    var result=collection.insertOne(t)
-    console.log(result)
-})
+## 📬 **Contacto y Más Información**
 
-```
-# Listas
+Si tienes alguna pregunta o necesitas más detalles, no dudes en [contactarnos](mailto:soporte@netec.com). También puedes encontrar más recursos en nuestra página de [Netec](https://netec.com).
 
-## Lista simple
-- elemento 1
-- elemento 2
-- elemento 3
+---
 
-## Lista números
-1. elemento 1
-2. elemento 2
-3. elemento 3
-
-## Lista anidada
-- Elemento principal
-    - Elemento interno 1
-    - Elemento interno 2
-        - elemento 
-        - elemento
-    - elemento interno 3
-
-## Lista de tareas
-- [ ] tarea 1
-- [x] tarea 2
-- [ ] tarea 3 
-- [ ] \(Optional) tarea opcional 
-
-# Tablas
-
-## Tabla simple
-
-| título columna 1  | título columna 2|
-| ------------- | ------------- |
-| contenido 1  | contenido 2  |
-| contenido 3  | contenido 4  |
-
-
-## Tabla con formato en las columnas
-
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
-
-
-## Alinear contenido en tabla
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-# Imagenes
-
-Para insertar una imágen se usa la siguiente sintáxis:
-
-```
-![descripción de la imagen](url imagen)
-```
-El url de la imágen puede ser de la siguiente forma:
-
-- Si la imágen esta dentro de la misma rama se usa la siguiente sintaxis:
-    ```
-     ![description](/assets/images/imagen1.png)
-    ```
-    - Donde:
-        - la ruta */assets/images* esta dentro de la rama donde se encuentra el archivo **README.md**
-
-- Si la imágen esta en otra rama se usa la siguiente sintaxis:
-    ```
-    ![description](/../name_branch/assets/images/imagen1.png)
-    ```
-    - Donde: 
-        - La ruta */../name_branch/assets/images/* esta dentro de el mismo repositorio pero es una rama diferente. 
-
-- Si la imagén esta en internet se usa la siguiente sintaxis: 
-    ``` 
-     ![description](https://url/imagen.png)
-    ```
-- Si se quiere controlar el tamaño de la imágen se debe usar html, de la siguiente forma:
-    ``` html
-    <img src="url image" width="200" height="200">
-     
-    ```
-    - Donde: 
-        - En el html se pueden editar los siguiente elementos: 
-            - **url image**:  La ruta de la imágen
-            - **width**: Ancho de la imágen en pixeles
-            - **height**: Alto de la imágen en pixeles
-
-
-# Alertas
-
-> [!NOTE]
-> útil para agregar alguna nota extra
-
-> [!TIP]
-> útil para dar algún tip
-
-> [!IMPORTANT]
-> útil para algún recordatorio
-
-> [!WARNING]
-> útil para alertar a los alumnos
-
-> [!CAUTION]
-> útil para sugerencias y precauciones.
+¡Gracias por visitar nuestra plataforma! No olvides revisar todos los laboratorios y comenzar tu viaje de aprendizaje hoy mismo.
