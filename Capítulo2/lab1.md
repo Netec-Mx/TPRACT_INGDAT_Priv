@@ -78,7 +78,7 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
   ![awstpract1](../images/lab1/img5.png)
 
-- **Paso 5.** Ahora da clic pra entrar a las propiedades del grupo.
+- **Paso 5.** Ahora da clic para entrar a las propiedades del grupo.
 
   ![awstpract1](../images/lab1/img6.png)
 
@@ -132,6 +132,7 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
   ![awstpract1](../images/lab1/img13.png)
   
   ---
+  
   ![awstpract1](../images/lab1/img14.png)
 
 - **Paso 13.** Clic en el botón **Attach policies**.
