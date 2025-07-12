@@ -26,6 +26,10 @@ Desarrollar múltiples scripts PySpark que procesen datos desde un archivo CSV e
 
 ---
 
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo6/lab11.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo8/lab13.html)**
+
+---
+
 ## Instrucciones
 
 ## Tarea 1: Iniciar sesión en la consola AWS
@@ -411,3 +415,7 @@ Desarrollar múltiples scripts PySpark que procesen datos desde un archivo CSV e
 - [PySpark – API completa](https://spark.apache.org/docs/latest/api/python/)
 - [EMR Serverless – Jobs](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/start-job-run.html)
 - [Amazon S3 – Subida de objetos](https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html)
+
+---
+
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo6/lab11.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo8/lab13.html)**
