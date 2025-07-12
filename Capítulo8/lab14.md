@@ -62,7 +62,7 @@ Configurar en AWS CloudWatch una alarma basada en métricas de facturación y de
 
 ---
 
-## Tarea 2: Habilitar métricas de facturación si no lo has hecho
+## Tarea 2 (Demostrativa): Habilitar métricas de facturación si no lo has hecho
 
 **Descripción:** Activar métricas de facturación para que CloudWatch pueda leerlas.
 
@@ -96,7 +96,7 @@ Configurar en AWS CloudWatch una alarma basada en métricas de facturación y de
 
 ---
 
-## Tarea 3: Crear un tópico SNS y suscripción por correo
+## Tarea 3 (Demostrativa): Crear un tópico SNS y suscripción por correo
 
 **Descripción:** Configurar el canal de notificación para las alertas.
 
@@ -156,7 +156,7 @@ Configurar en AWS CloudWatch una alarma basada en métricas de facturación y de
 
 ---
 
-## Tarea 4: Crear una alarma de CloudWatch para detectar exceso de costos
+## Tarea 4 (Demostrativa): Crear una alarma de CloudWatch para detectar exceso de costos
 
 **Descripción:** Configurar un umbral de alerta basado en métricas Billing.
 
@@ -232,6 +232,8 @@ Configurar en AWS CloudWatch una alarma basada en métricas de facturación y de
 ## Tarea 5: Crear un presupuesto con AWS Budgets
 
 **Descripción:** Configurar un presupuesto mensual con umbrales y notificaciones. Se recomienda su uso es mas reciente y mejor que CloudWatch Billing Alarms
+
+**NOTA:** Dentro de la interfaz, podrias encontrar recursos creados puedes ignorarlos y realizar los pasos de la tarea.
 
 ### Tarea 5.1
 
