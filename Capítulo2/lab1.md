@@ -183,7 +183,7 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
 - **Paso 8.** Haz clic en **"Create user"**.
 
-- **Paso 9.** Anota  en un **bloc de notas** o descarga el **archivo CSV**:
+- **Paso 9.** Anota los datos en un **bloc de notas** o descarga el **archivo CSV** los usaras en la siguiente tarea:
 
   - **Console sign-in URL**: 
     - Por ejemplo: `https://123456789012.signin.aws.amazon.com/console`
@@ -231,17 +231,17 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
 - **Paso 1.** Desde la consola, accede a:
 
-  - **Amazon S3** → Puedes acceder al bucket `lab-databucket-xxxxxxx`. Intenta eliminar el archivo de la carpeta **data**
+  - **Amazon S3** → Puedes acceder al bucket `lab-databucket-xxxxxxx`. Da clic sobre el nombre de la carpeta **data** después Intenta eliminar el archivo **ventas.csv**
 
-    ![awstpract1](../images/lab1/img23.png)
+  ![awstpract1](../images/lab1/img23.png)
 
   - **AWS Glue** → Puedes usar crawlers, catálogos y jobs. Intenta crear una Base de datos dentro del catalogo.
 
-    ![awstpract1](../images/lab1/img24.png)
+  ![awstpract1](../images/lab1/img24.png)
     
-    ---
+  ---
     
-    ![awstpract1](../images/lab1/img25.png)
+  ![awstpract1](../images/lab1/img25.png)
 
   - **Amazon Redshift** → Puedes consultar clústeres (solo lectura). **Inmediatamente ingresando** a la consola principal de **Redshift** marca error por la **politica** del usuario
 

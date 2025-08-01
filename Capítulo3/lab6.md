@@ -233,7 +233,7 @@ Ejecutar y monitorear dos funciones Lambda (`s3_data_processor` y `api_data_rece
   
   ![awstpract1](../images/lab6/img22.png)
 
-- **Paso 9.** Para realizar la prueba del paso anterior, puedes usar la **terminal BASH de tu equipo de trabajo**, descargar **POSTMAN** u otra herramienta para la llamada de APIs. 
+- **Paso 9.** Para realizar la prueba del paso anterior, puedes usar la **terminal BASH de tu equipo de trabajo**, **AWS CloudShell**, descargar **POSTMAN** u otra herramienta para la llamada de APIs. 
 
 > **TAREA FINALIZADA**
 

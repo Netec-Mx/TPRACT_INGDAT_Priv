@@ -334,8 +334,8 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
 - **Paso 6.** En la primera celda escribe el siguiente codigo y ejecuta la celda:
 
   ```bash
-  pip install boto3
-  pip install pandas
+  !pip install boto3
+  !pip install pandas
   ```
   
   ---
@@ -383,7 +383,7 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   
   ![awstpract1](../images/lab3/img24.png)  
 
-- **Paso 9.** Ejemplo básico en Python para explorar el archivo de **ventas.csv**
+- **Paso 9.** En la siguiente celda agrega el siguiente codigo. Ejemplo básico en Python para explorar el archivo de **ventas.csv**
 
   ```python
   import pandas as pd

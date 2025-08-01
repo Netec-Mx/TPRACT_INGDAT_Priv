@@ -247,7 +247,7 @@ Aprender a crear y configurar grupos de seguridad (Security Groups) en AWS para 
 
 - **Paso 3.** Verificar que las reglas coincidan con lo definido 
 
-- **Paso 4.** Tomar nota del Group ID para uso futuro  
+- **Paso 4.** Copia el `Security group ID` a un **bloc de notas** lo usaras más adelante. 
 
 > **TAREA FINALIZADA**
 
