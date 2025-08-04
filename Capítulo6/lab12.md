@@ -84,7 +84,7 @@ Desarrollar múltiples scripts PySpark que procesen datos desde un archivo CSV e
   df_grouped.write.csv("s3://lab-databucket-xxxx/output/ventas_por_provincia/", header=True, mode="overwrite")
   ```
 
-- **Paso 3.** Modifica las letras `x` en el nombre del bucket pr las que se te asignaron al curso.
+- **Paso 3.** Modifica las letras `x` en el nombre del bucket por las que se te asignaron al curso.
 
   ![awstpract1](../images/lab12/img3.png)  
 
@@ -308,7 +308,7 @@ Desarrollar múltiples scripts PySpark que procesen datos desde un archivo CSV e
 
   ![awstpract1](../images/lab12/img35.png)
 
-- **Paso 4.** Ahora clic en el botón **Submit batch job run** y luego **Submit job run**
+- **Paso 4.** Ahora clic en la flecha del lado derecho del botón **Submit batch job run** y luego **Submit job run**
 
   ![awstpract1](../images/lab12/img36.png)
 

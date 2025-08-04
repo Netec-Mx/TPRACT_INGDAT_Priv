@@ -189,8 +189,6 @@ Aprender a configurar políticas de acceso en Amazon S3, estableciendo:
 
 - **Paso 13.** Clic en **Save changes**
 
-- **Paso 14.** Selecciona **"Edit"** → sección **Public access**
-
 > **TAREA FINALIZADA**
 
 **Resultado esperado:** Se realizo la configuració que da acceso publicamente al objecto. No es recomendable los permisos abiertos
