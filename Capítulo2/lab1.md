@@ -1,68 +1,62 @@
 # Práctica 1: Creación de un usuario en IAM y asignación de políticas
 
-## Objetivo
+## 🎯 Objetivos:
+Al finalizar la práctica, serás capaz de:
+- Crear un nuevo usuario IAM con acceso restringido a los servicios utilizados por ingenieros de datos, incluyendo su integración en un grupo IAM con una política personalizada. Todo se realizará en la región **us-west-2 (Oregón)**.
 
-Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ingenieros de datos, incluyendo su integración a un grupo IAM con una política personalizada. Todo se realizará en la región **us-west-2 (Oregón)**.
-
-## Requisitos
-
-- Acceso a una cuenta de AWS con permisos administrativos (ej. rol `AdministratorAccess`).
+## 📝 Requisitos previos:
+- Acceso a una cuenta de AWS con permisos administrativos (por ejemplo: rol `AdministratorAccess`).
 - Navegador web moderno con conexión a internet.
-- Familiaridad básica con la consola de AWS.
+- Conocimiento básico de la consola de AWS.
 
-## Duración aproximada
-
+## 🕒 Duración aproximada:
 - 20 minutos
 
-## Región de AWS
-
+## 📍 Región de AWS:
 - us-west-2 (Oregón)
 
 ---
 
-**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo8/lab14.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)**
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo8/lab14.html)** | **[Lista general](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)**
 
 ---
 
-## Instrucciones
+## 📋 Instrucciones:
 
-## Tarea 1: Iniciar sesión en la consola AWS
+### Tarea 1: Iniciar sesión en la consola de AWS.
 
-**Descripción:** Acceder como usuario IAM.
+**Descripción:** Accede como usuario IAM.
 
-### Tarea 1.1
+- **Paso 1.** Dirígete a [AWS Console](https://aws.amazon.com/console).
 
-- **Paso 1.** Ir a [AWS Console](https://aws.amazon.com/console)
+- **Paso 2.** Haz clic en **Sign in**.
 
-- **Paso 2.** Clic en **Sign in**
+- **Paso 3.** Inicia sesión con:
 
-- **Paso 3.** Iniciar sesión con:
+  - **Account ID or alias:** `Cuenta asignada en el curso`
+  - **IAM username:** `Asignado en el curso`
+  - **Password:** `Asignada en el curso`
 
-  - Account ID or alias: `Cuenta asignada en el curso`
-  - IAM username: `Asignado en el curso`
-  - Password: `Asignada en el curso`
-
-- **Paso 4.** Verificar que estás en la región `us-west-2`
+- **Paso 4.** Verificar que estás en la región `us-west-2`.
 
   ![awstpract1](../images/lab12/img1.png)  
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Acceso exitoso a la consola.
+### Resultado esperado:
+Obtendrás el acceso exitoso a la consola.
 
 ---
 
-## Tarea 2: Crear grupo IAM con políticas personalizadas
+### Tarea 2: Crear grupo IAM con políticas personalizadas.
 
-**Descripción:** Se crea el grupo `DataEngineers` con una política personalizada que restringe el acceso a un bucket S3 específico y se agregan políticas administradas de Glue y Redshift.
-
-### Tarea 2.1
+**Descripción:** Crea el grupo `DataEngineers` con una política personalizada que limite el acceso a un bucket S3 específico y agrega las políticas administradas de Glue y Redshift.
 
 - **Paso 1.** En la barra de búsqueda superior, escribe `IAM` y selecciona el servicio.
 
   ![awstpract1](../images/lab1/img1.png)
 
-- **Paso 2.** En el menú izquierdo, haz clic en **"User groups"** → luego en **"Create group"**.
+- **Paso 2.** En el menú izquierdo, haz clic en **"User groups"** y luego en **"Create group"**.
 
   ![awstpract1](../images/lab1/img2.png)
   
@@ -74,11 +68,11 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
   ![awstpract1](../images/lab1/img4.png)
 
-- **Paso 4.** Haz clic en **"Create user group"** hasta el final de la página.
+- **Paso 4.** Haz clic en **"Create user group"** al final de la página.
 
   ![awstpract1](../images/lab1/img5.png)
 
-- **Paso 5.** Ahora da clic para entrar a las propiedades del grupo.
+- **Paso 5.** Haz clic en el nombre del grupo para entrar a las propiedades del grupo.
 
   ![awstpract1](../images/lab1/img6.png)
 
@@ -86,7 +80,7 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
   ![awstpract1](../images/lab1/img7.png)
 
-- **Paso 7.** Pega la siguiente política personalizada en un **bloc de notas para editarla**. **Sustituye** el nombre del bucket en el politica. Por el que se te asigno al curso.
+- **Paso 7.** Pega la siguiente política personalizada en un **Bloc de notas** para editarla. **Sustituye** el nombre del bucket en la política por el que se te asignó en el curso.
 
   ```json
   {
@@ -107,20 +101,21 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
   
   ![awstpract1](../images/lab1/img8.png)
 
-- **Paso 8.** Ya editada la politica copiala y regresa a la consola de edición de la politica de IAM. Da clic en **JSON** y luego **borra** el **contenido** de la politica actual y **pega la nueva politica.**
+- **Paso 8.** Una vez editada la política, cópiala y regresa a la consola de edición de la política de IAM. Haz clic en **JSON**, **borra** el **contenido** actual de la política y **pega la nueva.**
 
   ![awstpract1](../images/lab1/img9.png)
+  
   ---
   
   ![awstpract1](../images/lab1/img10.png)
 
-- **Paso 9.** Haz clic en **"Next"**, y nombra la política: `S3Access-DataIngest-Bucket`
+- **Paso 9.** Haz clic en **"Next"** y asigna como nombre de la política: `S3Access-DataIngest-Bucket`.
 
   ![awstpract1](../images/lab1/img11.png)
 
-- **Paso 10.** Finalmente da clic en el botón **Create policy**.
+- **Paso 10.** Finalmente, haz clic en el botón **Create policy**.
 
-- **Paso 11.** Ahora en la misma pestaña de **Permissions**. Clic en **Add permissions** y luego en **Attach policies**.
+- **Paso 11.** En la misma pestaña **Permissions**, haz clic en **Add permissions** y luego en **Attach policies**.
 
   ![awstpract1](../images/lab1/img12.png)
 
@@ -135,45 +130,44 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
   
   ![awstpract1](../images/lab1/img14.png)
 
-- **Paso 13.** Clic en el botón **Attach policies**.
+- **Paso 13.** Haz clic en el botón **Attach policies**.
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Grupo IAM `DataEngineers` creado con acceso solo al bucket `lab-databucket-xxxxxxx`, Glue completo y Redshift solo lectura.
+### Resultado esperado:
+Grupo IAM `DataEngineers` creado con acceso únicamente al bucket `lab-databucket-xxxxxxx`, con permisos completos para Glue y solo de lectura para Redshift.
 
 ---
 
-## Tarea 3: Crear un nuevo usuario y asociarlo al grupo
+### Tarea 3: Crear un nuevo usuario y asociarlo al grupo.
 
-**Descripción:** Crear el usuario `data_engineer_lab` y asociarlo al grupo `DataEngineers`.
+**Descripción:** Crea el usuario `data_engineer_lab` y asígnalo al grupo `DataEngineers`.
 
-### Tarea 3.1
-
-- **Paso 1.** En el servicio **IAM**, ve a **"Users"** → **"Create user"**.
+- **Paso 1.** En el servicio **IAM**, ve a **"Users"** y haz clic en **"Create user"**.
 
   ![awstpract1](../images/lab1/img15.png)
 
-- **Paso 2.** En **User name**, escribe: `data_engineer_lab`
+- **Paso 2.** En **User name**, escribe: `data_engineer_lab`.
 
   ![awstpract1](../images/lab1/img16.png)
 
-- **Paso 3.** Marca **"Provide user access to the AWS Management Console"**.
+- **Paso 3.** Marca la opción: **"Provide user access to the AWS Management Console"**.
 
   ![awstpract1](../images/lab1/img17.png)
 
-- **Paso 4.** Clic en **Custom password** y define una contraseña segura (ejemplo: `Datos2025!`).
+- **Paso 4.** Selecciona **Custom password** y define una contraseña segura (por ejemplo: `Datos2025!`).
 
   ![awstpract1](../images/lab1/img18.png)
 
-- **Paso 5.** Desmarca **"Users must create a new password at next sign-in - Recommended"** y da clic en **Next**.
+- **Paso 5.** Desmarca la casilla **"Users must create a new password at next sign-in - Recommended"** y haz clic en **Next**.
 
   ![awstpract1](../images/lab1/img19.png)
 
-- **Paso 6.** En la sección de **Set permissions**, selecciona **"Add user to group"** y marca **`DataEngineers`**. Clic en **Next**
+- **Paso 6.** En la sección **Set permissions**, selecciona **"Add user to group"** y marca el grupo **`DataEngineers`**. Finalmente, haz clic en **Next**.
 
   ![awstpract1](../images/lab1/img20.png)
 
-- **Paso 7.** En la sección **Review and create** añade las siguientes etiquetas:
+- **Paso 7.** En la sección **Review and create**, añade las siguientes etiquetas:
 
   - `Key: Project` | `Value: DataLakePOC`  
   - `Key: Role`    | `Value: DataEngineer`  
@@ -183,59 +177,57 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
 - **Paso 8.** Haz clic en **"Create user"**.
 
-- **Paso 9.** Anota los datos en un **bloc de notas** o descarga el **archivo CSV** los usaras en la siguiente tarea:
+- **Paso 9.** Anota los datos en un **Bloc de notas** o descarga el **archivo CSV**, ya que los usarás en la siguiente tarea:
 
   - **Console sign-in URL**: 
-    - Por ejemplo: `https://123456789012.signin.aws.amazon.com/console`
-  - **User name**: `data_engineer_lab`
-  - **Console Password**: (Definida)
+    - Por ejemplo: `https://123456789012.signin.aws.amazon.com/console`.
+  - **User name**: `data_engineer_lab`.
+  - **Console password**: Definida.
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Usuario creado y vinculado al grupo `DataEngineers`, heredando sus políticas.
+### Resultado esperado:
+Usuario creado y vinculado al grupo `DataEngineers`, heredando sus políticas.
 
 ---
 
-## Tarea 4: Iniciar sesión en la consola con el nuevo usuario
+### Tarea 4: Iniciar sesión en la consola con el nuevo usuario.
 
-**Descripción:** Verificar que el nuevo usuario puede iniciar sesión correctamente.
-
-### Tarea 4.1
+**Descripción:** Verifica que el nuevo usuario pueda iniciar sesión correctamente.
 
 - **Paso 1.** Abre una nueva ventana en **modo incógnito**.
 
-- **Paso 2.** Copia y pega la URL de **Console sign-in URL** anotado.
+- **Paso 2.** Copia y pega la URL de **Console sign-in URL** que anotaste.
 
 - **Paso 3.** Ingresa los datos del usuario creado y clic en **Sign in**:
 
-  - Usuario: `data_engineer_lab`
-  - Contraseña: Definida
+  - Usuario: `data_engineer_lab`.
+  - Contraseña: Definida.
 
   ![awstpract1](../images/lab1/img22.png)
 
-- **Paso 4.** Cambia la contraseña solo si se solicita.
+- **Paso 4.** Cambia la contraseña únicamente si el sistema lo solicita.
 
-- **Paso 5.** Verifica en la parte superior derecha que estás en la región **us-west-2 (Oregón)**.
+- **Paso 5.** Verifica en la parte superior derecha que la región seleccionada sea **us-west-2 (Oregón)**.
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** El usuario puede ingresar exitosamente a la consola web de AWS.
+### Resultado esperado:
+El usuario puede iniciar sesión exitosamente en la consola web de AWS.
 
 ---
 
-## Tarea 5: Validar acceso a servicios permitidos
+## Tarea 5: Validar acceso a servicios permitidos.
 
-**Descripción:** Verificar acceso a servicios y denegación en servicios no permitidos.
-
-### Tarea 5.1
+**Descripción:** Verifica el acceso a los servicios y la denegación en servicios no permitidos.
 
 - **Paso 1.** Desde la consola, accede a:
 
-  - **Amazon S3** → Puedes acceder al bucket `lab-databucket-xxxxxxx`. Da clic sobre el nombre de la carpeta **data** después Intenta eliminar el archivo **ventas.csv**
+  - **Amazon S3** → Puedes acceder al bucket `lab-databucket-xxxxxxx`. Para ello, da clic sobre el nombre de la carpeta **data**; posteriormente, intenta eliminar el archivo **ventas.csv**.
 
   ![awstpract1](../images/lab1/img23.png)
 
-  - **AWS Glue** → Puedes usar crawlers, catálogos y jobs. Intenta crear una Base de datos dentro del catalogo.
+  - **AWS Glue** → Puedes usar crawlers, catálogos y jobs. Intenta crear una Base de datos dentro del catálogo.
 
   ![awstpract1](../images/lab1/img24.png)
     
@@ -243,11 +235,11 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
     
   ![awstpract1](../images/lab1/img25.png)
 
-  - **Amazon Redshift** → Puedes consultar clústeres (solo lectura). **Inmediatamente ingresando** a la consola principal de **Redshift** marca error por la **politica** del usuario
+  - **Amazon Redshift** → Puedes consultar clústeres (solo lectura). **Inmediatamente ingresando** a la consola principal de **Redshift**, marca error por la **política** del usuario.
 
     ![awstpract1](../images/lab1/img26.png)
 
-- **Paso 2.** Intenta acceder a servicios como **EC2**, **IAM** o **RDS**. Debe mostrar **“Access Denied”**.
+- **Paso 2.** Intenta acceder a servicios, tales como **EC2**, **IAM** o **RDS**. Después, debe mostrar **“Access Denied”**.
 
   ![awstpract1](../images/lab1/img27.png)
   
@@ -261,19 +253,22 @@ Crear un nuevo usuario IAM con acceso restringido a servicios utilizados por ing
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Acceso restringido correctamente según las políticas del grupo IAM.
+### Resultado esperado:
+Acceso restringido correctamente según las políticas del grupo IAM.
 
 ---
 
-> **¡FELICIDADES HAZ COMPLETADO EL LABORATORIO 1!**
+> **¡FELICIDADES, HAS COMPLETADO EL LABORATORIO 1!**
 
-## Resultado final
+## Resultado final:
 
-Se ha creado exitosamente un grupo IAM (`DataEngineers`) con una política personalizada y permisos gestionados. El usuario `data_engineer_lab` puede iniciar sesión en la consola de AWS en la región us-west-2 y trabajar únicamente con S3 (específico), Glue y Redshift. No tiene acceso a otros servicios, cumpliendo con el principio de mínimo privilegio.
+Has creado exitosamente un grupo IAM llamado `DataEngineers`, con una política personalizada y permisos gestionados. El usuario `data_engineer_lab` puede iniciar sesión en la consola de AWS en la región us-west-2 y trabajar exclusivamente con los servicios S3 (de forma específica), Glue y Redshift.
+
+Este usuario no tiene acceso a otros servicios, lo que garantiza el cumplimiento del principio de mínimo privilegio.
 
 ---
 
-## URLS de referencia
+## URLS de referencia:
 
 - [Documentación oficial de IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 - [Guía para crear políticas IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html)
@@ -283,4 +278,4 @@ Se ha creado exitosamente un grupo IAM (`DataEngineers`) con una política perso
 
 ---
 
-**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo8/lab14.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)**
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo8/lab14.html)** | **[Lista general](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)**
