@@ -1,4 +1,4 @@
-# Práctica 2: Configuración de Grupos de Seguridad en AWS
+# Práctica 2. Configuración de Grupos de Seguridad en AWS
 
 ## 🎯 Objetivos:
 Al finalizar la práctica, serás capaz de:
