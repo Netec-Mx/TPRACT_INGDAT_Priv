@@ -1,108 +1,105 @@
-# Práctica 3: Lanzamiento de una instancia EC2
+# Práctica 3. Lanzamiento de una instancia EC2
 
-## Objetivo 
+## 🎯 Objetivos:
+Al finalizar la práctica, serás capaz de:
+- Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando Amazon Linux 2023.
+- Asociar un rol de IAM (Instance Profile) a la instancia.
+- Configurar el almacenamiento y el grupo de seguridad.
+- Ejecutar un script de instalación automática de JupyterLab mediante `User Data`.
 
-Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando Amazon Linux 2023, asociando un IAM Role (Instance Profile), configurando almacenamiento, grupo de seguridad, y ejecutando un script de instalación automática de JupyterLab mediante `User Data`.
+## 📝 Requisitos previos:
+- Haber completado la Práctica 2: Configuración de grupos de seguridad.
+- Tener acceso a la consola de AWS con un usuario de IAM.
+- Contar con conocimientos básicos sobre EC2, conexión por SSH y configuración de red.
 
-## Requisitos
+## 🕒 Duración aproximada:
+- 60 minutos.
 
-- Haber completado la Práctica 2: Configuración de grupos de seguridad  
-- Tener acceso a la consola de AWS (IAM user)    
-- Conocimiento básico de EC2, SSH, y configuración de red
-
-## Duración aproximada
-
-- 60 minutos
-
-## Región de AWS
-
-- us-west-2 (Oregón)
-
----
-
-**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab4.html)**
+## 📍 Región de AWS:
+- us-west-2 (Oregón).
 
 ---
 
-## Instrucciones
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)** | **[Lista general](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab4.html)**
+
+---
+
+## Instrucciones:
 
 ## Tarea 1: Iniciar sesión en la consola AWS
 
-**Descripción:** Acceder como usuario IAM.
+### Tarea 1: Iniciar sesión en la consola de AWS.
 
-### Tarea 1.1
+**Descripción:** Accede como usuario IAM.
 
-- **Paso 1.** Ir a [AWS Console](https://aws.amazon.com/console)
+- **Paso 1.** Dirígete a [AWS Console](https://aws.amazon.com/console).
 
-- **Paso 2.** Clic en **Sign in**
+- **Paso 2.** Haz clic en **Sign in**.
 
-- **Paso 3.** Iniciar sesión con:
+- **Paso 3.** Inicia sesión con:
 
-  - Account ID or alias: `Cuenta asignada en el curso`
-  - IAM username: `Asignado en el curso`
-  - Password: `Asignada en el curso`
+  - **Account ID or alias:** `Cuenta asignada en el curso`
+  - **IAM username:** `Asignado en el curso`
+  - **Password:** `Asignada en el curso`
 
-- **Paso 4.** Verificar que estás en la región `us-west-2`
+- **Paso 4.** Verifica que estás en la región `us-west-2`.
 
   ![awstpract1](../images/lab12/img1.png)  
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Acceso exitoso a la consola.
+### Resultado esperado:
+Obtendrás el acceso exitoso a la consola.
 
 ---
 
-## Tarea 2: Iniciar el asistente de creación de instancias
+## Tarea 2: Iniciar el asistente de creación de instancias.
 
-### Tarea 2.1
-
-- **Paso 1.** Ir al servicio **EC2**
+- **Paso 1.** Dirígete al servicio **EC2**.
 
   ![awstpract1](../images/lab2/img1.png)
 
-- **Paso 2.** En el panel izquierdo, hacer clic en **Instances** 
+- **Paso 2.** En el panel lateral izquierdo, haz clic en **Instances**.
 
   ![awstpract1](../images/lab3/img1.png)
 
-- **Paso 3.** Hacer clic en el botón **Launch instances**
+- **Paso 3.** Haz clic en el botón **Launch instances**.
 
   ![awstpract1](../images/lab3/img2.png)
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Acceso al asistente para lanzar una nueva instancia EC2.
+### Resultado esperado:
+Accederás al asistente para lanzar una nueva instancia EC2.
 
 ---
 
-## Tarea 3: Configurar sistema operativo, tipo y nombre
+## Tarea 3: Configurar sistema operativo, tipo y nombre.
 
-### Tarea 3.1
-
-- **Paso 1.** Nombre: `Instancia-Jupyter-Datos` 
+- **Paso 1.** Asigna el nombre: `Instancia-Jupyter-Datos`.
 
   ![awstpract1](../images/lab3/img3.png)
 
-- **Paso 2.** AMI: **Amazon Linux 2023** (64-bit x86)
+- **Paso 2.** AMI: **Amazon Linux 2023** (64-bit x86).
 
   ![awstpract1](../images/lab3/img4.png)
 
-- **Paso 3.** Tipo de instancia recomendado: `t3.small` (2 vCPU, 2 GB RAM, burstable y rentable)
+- **Paso 3.** Elige el tipo de instancia recomendado: `t3.small` (2 vCPU, 2 GB RAM, burstable y rentable).
 
   ![awstpract1](../images/lab3/img5.png)
 
 > **TAREA FINALIZADA**
 
-**Validación:** AMI oficial, arquitectura correcta, instancia balanceada y económica.
+### Validación:
+AMI oficial, arquitectura correcta, instancia balanceada y económica.
 
 ---
 
-## Tarea 4: Seleccionar o crear clave SSH
+## Tarea 4: Seleccionar o crear clave SSH.
 
-### Tarea 4.1
+- **Paso 1.** En la sección **Key pair (login)**:
 
-- **Paso 1.** En **Key pair (login)**:
-
-  - Crear una nueva clave llamada: `llave-jupyter`  
+  - Crea una nueva clave bajo el nombre: `llave-jupyter`.  
   
   ---
   
@@ -112,19 +109,18 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   
   ![awstpract1](../images/lab3/img7.png)
 
-- **Paso 2.** La llave se descarga automaticamente en tu equipo, guardarla muy bien por si se requiere usar.
+- **Paso 2.** La clave se descargará automáticamente en tu equipo. Guárdala en un lugar seguro por si se requiere usar.
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Clave configurada correctamente.
+### Resultado esperado:
+Clave SSH creada y configurada correctamente.
 
 ---
 
 ## Tarea 5: Configurar red y grupo de seguridad
 
-### Tarea 5.1
-
-- **Paso 1.** En **Network settings** clic en el boton **Edit**:
+- **Paso 1.** En **Network settings**, haz clic en el botón **Edit**:
 
   - VPC: `LabVPC`  
   - Subnet: `Public Subnet 1`  
@@ -136,32 +132,31 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
 
 - **Paso 2.** Firewall (security groups):
 
-  - Select existing security group: `SG-Analisis-Datos`  
-  - Confirmar que permite:
-        
-      **NOTA** Los puertos estan permitos ya que es el grupo de seguriad configurado en el Laboratorio2.
-        
-      - Puerto 22 (SSH) desde tu IP  
-      - Puerto 8888 (JupyterLab) desde tu IP
-  
+  - Selecciona el grupo de seguridad existente: `SG-Analisis-Datos`.
+  - Verifica que se permiten los siguientes puertos:
+                
+      - Puerto 22 (SSH) desde tu IP.
+      - Puerto 8888 (JupyterLab) desde tu IP.
+
+> 💡 ***Nota:** Estos puertos ya están habilitados, ya que el grupo de seguridad fue configurado previamente en el Laboratorio 2.*
+
       ---
    
      ![awstpract1](../images/lab3/img9.png)
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Reglas adecuadas para conectividad segura desde tu equipo.
+### Resultado esperado:
+Reglas adecuadas para conectividad segura desde tu equipo.
 
 ---
 
-## Tarea 6: Configurar almacenamiento
+## Tarea 6: Configurar almacenamiento.
 
-### Tarea 6.1 
-
-- **Paso 1.** En **Configure storage**
+- **Paso 1.** En la sección **Configure storage**:
     
-  - Tamaño recomendado: **25 GiB**  
-  - Tipo de volumen: `gp3`
+  - Tamaño recomendado: **25 GiB**.
+  - Tipo de volumen: `gp3`.
   
   --- 
   
@@ -169,35 +164,33 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
 
 > **TAREA FINALIZADA**
 
-**Validación:** Espacio suficiente para almacenar notebooks, datasets y logs.
+### Validación:
+El espacio asignado es suficiente para almacenar notebook, datasets y logs.
 
 ---
 
 ## Tarea 7: Asignar un Instance Profile (IAM Role)
 
-### Tarea 7.1 
+- **Paso 1** En la sección **Advanced details**, busca el campo **IAM instance profile**.
 
-- **Paso 1** En **Advanced details**, buscar el campo **IAM instance profile** 
-
-- **Paso 2.** Seleccionar el role previamente creado, por ejemplo: `EC2Role`
+- **Paso 2.** Selecciona el rol previamente creado, por ejemplo: `EC2Role`
 
   ![awstpract1](../images/lab3/img11.png)
 
-- **Paso 3.** El role contiene la politica de:
+- **Paso 3.** Verifica que el rol incluya la política:
     
   - `AmazonS3ReadOnlyAccess`
 
 > **TAREA FINALIZADA** 
 
-**Resultado esperado:** Instancia con permisos administrados para acceder a servicios AWS como S3.
+### Resultado esperado:
+La instancia contará con permisos administrados para acceder a servicios de AWS, como Amazon S3.
 
 ---
 
 ## Tarea 8: Configurar el script de User Data
 
-### Tarea 8.1 
-
-- **Paso 1.** En el mismo apartado de **Advanced details**, pero casi al final, pega el siguiente script en **User data**:
+- **Paso 1.** En el mismo apartado de **Advanced details**, desplázate hacia el final y pega el siguiente script en **User data**:
 
   ```bash
   #!/bin/bash
@@ -242,15 +235,14 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
 
 > **TAREA FINALIZADA** 
 
-**Validación:** Este script instalará JupyterLab y lo levantará automáticamente en el puerto 8888 sin token.
+### Validación:
+Este script instalará JupyterLab y lo iniciará automáticamente en el puerto 8888, sin requerir token de acceso. 
 
 ---
 
-## Tarea 9: Revisión y lanzamiento
+## Tarea 9: Revisión y lanzamiento.
 
-### Tarea 9.1
-
-- **Paso 1.** Revisar todas las configuraciones: 
+- **Paso 1.** Revisa todas las configuraciones: 
 
   - AMI  
   - Tipo `t3.small`  
@@ -259,31 +251,30 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   - IAM Role  
   - Script de User Data 
 
-- **Paso 2.** Hacer clic en **Launch instance**
+- **Paso 2.** Haz clic en **Launch instance**
 
   ![awstpract1](../images/lab3/img13.png)
 
-- **Paso 3.** Clic en el boton inferior derecha **View all instances** 
+- **Paso 3.** En la parte inferior derecha, haz clic en **View all instances** 
 
-- **Paso 4.** Mientras esperas a que el estado sea `running` avanza con la **Tarea 10.**
+- **Paso 4.** - Mientras esperas a que el estado cambie a `running`, puedes avanzar con la **Tarea 10.**
 
 > **TAREA FINALIZADA** 
 
-**Resultado esperado:** Instancia lanzada correctamente, con JupyterLab corriendo en segundo plano.
+### Resultado esperado:
+La instancia se habrá lanzado correctamente, con JupyterLab ejecutándose en segundo plano.
 
 ---
 
-## Tarea 10: Añadir etiquetas
+## Tarea 10: Añadir etiquetas.
 
-### Tarea 10.1
-
-- **Paso 1.** Da clic en la sección **Tags**.
+- **Paso 1.** Haz clic en la sección **Tags**.
 
   ![awstpract1](../images/lab3/img14.png)
 
-- **Paso 2.** Agregar las siguientes etiquetas que falten, clic en **Manage tags** luego en **Add new tag**:
+- **Paso 2.** Agrega las siguientes etiquetas faltantes. Haz clic en **Manage tags** y luego en **Add new tag**:
 
-  | Key       | Value             |
+  | Clave (Key)       | Value (Valor)             |
   |-----------|-------------------|
   | Name      | Instancia-Jupyter-Datos |
   | Proyecto  | DataPipeline      |
@@ -294,44 +285,42 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   
   ![awstpract1](../images/lab3/img15.png)
 
-- **Paso 3.** Clic en el botón **Save**.
+- **Paso 3.** Haz clic en el botón **Save**.
 
 > **TAREA FINALIZADA** 
 
-**Resultado esperado:** Recursos etiquetados correctamente para administración y monitoreo.
+### Resultado esperado:
+Los recursos estarán correctamente etiquetados, lo que facilitará su administración y monitoreo.
 
 ---
 
-## Tarea 11: Verificar acceso a JupyterLab
+## Tarea 11: Verificar acceso a JupyterLab.
 
-### Tarea 11.1
-
-- **Paso 1.** Obtener la IP pública de la instancia, selecciona la instancia para obtener los detalles, copia la IP publica.
+- **Paso 1.** Obtén la IP pública de tu instancia. Selecciona la instancia para obtener los detalles y copia la IP publica.
 
   ![awstpract1](../images/lab3/img16.png)
 
 - **Paso 2.** En tu navegador, abre una pestaña nueva y pega tu IP Publica con el puerto 8888:
 
-    **NOTA:** Asegurate que sea mediante el puerto 80 (HTTP)
+> 💡 ***Nota:** Asegúrate que sea mediante el puerto 80 (HTTP).*
 
   ```
   http://<IP_PUBLICA>:8888
   ```
-  ---
-  ![awstpract1](../images/lab3/img17.png)
 
+![awstpract1](../images/lab3/img17.png)
 
-- **Paso 3.** Verifica que JupyterLab cargue sin solicitar token
+- **Paso 3.** Verifica que JupyterLab cargue correctamente sin solicitar token de acceso.
 
   ![awstpract1](../images/lab3/img18.png)
 
-- **Paso 4.** Crear un nuevo notebook clic en **`File`**/**`New`**/**`Notebook`**
+- **Paso 4.** Crea un nuevo notebook: haz clic en **`File`** → **`New`** → **`Notebook`**.
 
-- **Paso 5.** Cargara una ventana emergente asegurate de seleccionar **Python 3 (ipykernel)** y clic en **Select**
+- **Paso 5.** Se abrirá una ventana emergente. Asegúrate de seleccionar **Python 3 (ipykernel)** y haz clic en **Select**.
 
   ![awstpract1](../images/lab3/img19.png)
 
-- **Paso 6.** En la primera celda escribe el siguiente codigo y ejecuta la celda:
+- **Paso 6.** En la primera celda, escribe el siguiente código y ejecuta la celda:
 
   ```bash
   !pip install boto3
@@ -350,7 +339,7 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
 
   ![awstpract1](../images/lab3/img25.png)
 
-- **Paso 7.** Ahora reinicia el kernel y da clic en el botón **Restart**
+- **Paso 7.** Después, reinicia el kernel y haz clic en el botón **Restart**.
 
   ![awstpract1](../images/lab3/img22.png)    
   
@@ -358,7 +347,7 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   
   ![awstpract1](../images/lab3/img23.png)   
 
-- **Paso 8.** En la siguiente celda agrega el siguiente codigo, cambia el nombre de tu bucket de s3 asignado al curso. **Ejecuta la celda**
+- **Paso 8.** En la siguiente celda, agrega el siguiente código. Cambia el nombre de tu bucket de s3 asignado al curso. Luego, **ejecuta la celda**.
 
   ```python
   import boto3
@@ -383,7 +372,7 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   
   ![awstpract1](../images/lab3/img24.png)  
 
-- **Paso 9.** En la siguiente celda agrega el siguiente codigo. Ejemplo básico en Python para explorar el archivo de **ventas.csv**
+- **Paso 9.** En la siguiente celda, agrega el siguiente código para explorar el archivo **ventas.csv**.
 
   ```python
   import pandas as pd
@@ -396,32 +385,33 @@ Lanzar una instancia EC2 en AWS para entornos de análisis de datos, utilizando 
   print(df.groupby('Provincia')['Unidades'].sum())
   ```
   
-  ---
-  
-  ![awstpract1](../images/lab3/img26.png)
+![awstpract1](../images/lab3/img26.png)
 
 > **TAREA FINALIZADA** 
 
-**Resultado esperado:** Acceso web exitoso a JupyterLab sin errores y con pruebas sobre el manejo de datos con python y pandas.
+### Resultado esperado:
+Obtendrás acceso web exitoso a JupyterLab, sin errores y con pruebas sobre el manejo de datos con Python y pandas.
 
 ---
 
 > **¡FELICIDADES HAZ COMPLETADO EL LABORATORIO 3!**
 
-## Resultado final  
+## Resultado final:  
 
-El usuario tendrá una instancia EC2 funcional en Amazon Linux, con JupyterLab preinstalado, accesible vía navegador, y configurada bajo buenas prácticas de red, almacenamiento, IAM y automatización.
+El usuario contará con una instancia EC2 funcional basada en Amazon Linux, con:
+- JupyterLab preinstalado y accesible vía navegador web.
+- Configuración bajo buenas prácticas de red, almacenamiento, IAM y automatización.
 
 ---
 
-## Notas y/o Consideraciones
+## Notas y/o consideraciones:
   
-- Si no ves JupyterLab, asegúrate de que el puerto 8888 esté abierto en tu grupo de seguridad  
-- El uso de `--NotebookApp.token=''` deja la interfaz sin autenticación; úsalo solo para pruebas  
-- Considera integrar certificados SSL o contraseñas si accedes desde redes públicas  
-- Revisa CloudWatch Logs para verificar errores en el servicio `jupyter`
+- Si no ves JupyterLab en el navegador, verifica que el puerto 8888 esté abierto en el grupo de seguridad de la instancia.
+- El uso de `--NotebookApp.token=''` desactiva la autenticación; solo recomendado para entornos de prueba.  
+- Considera integrar certificados SSL o establecer contraseñas si accedes desde redes públicas.
+- Revisa los CloudWatch Logs para diagnosticar errores en el servicio `jupyter`.
 
-## URLS de referencia
+## 🔗 URLS de referencia:
 
 - [Amazon EC2 User Data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)  
 - [JupyterLab CLI Options](https://jupyterlab.readthedocs.io/en/stable/user/urls.html)  
@@ -429,4 +419,4 @@ El usuario tendrá una instancia EC2 funcional en Amazon Linux, con JupyterLab p
 
 ---
 
-**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab4.html)**
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab2.html)** | **[Lista general](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab4.html)**
