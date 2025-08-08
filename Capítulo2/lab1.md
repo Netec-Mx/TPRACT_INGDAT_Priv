@@ -37,7 +37,7 @@ Al finalizar la práctica, serás capaz de:
   - **IAM username:** `Asignado en el curso`
   - **Password:** `Asignada en el curso`
 
-- **Paso 4.** Verificar que estás en la región `us-west-2`.
+- **Paso 4.** Verifica que estás en la región `us-west-2`.
 
   ![awstpract1](../images/lab12/img1.png)  
 
