@@ -404,7 +404,7 @@ El usuario contará con una instancia EC2 funcional basada en Amazon Linux, con:
 
 ---
 
-## Notas y/o consideraciones:
+## 🗒️ Notas y/o consideraciones:
   
 - Si no ves JupyterLab en el navegador, verifica que el puerto 8888 esté abierto en el grupo de seguridad de la instancia.
 - El uso de `--NotebookApp.token=''` desactiva la autenticación; solo recomendado para entornos de prueba.  
