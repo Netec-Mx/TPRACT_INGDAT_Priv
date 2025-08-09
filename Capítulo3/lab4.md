@@ -1,28 +1,25 @@
-# Práctica 4: Creación de una función Lambda desde cero.
+# Práctica 4. Creación de una función Lambda desde cero
 
-## Objetivo
-
+## 🎯 Objetivos:
+Al finalizar la práctica, serás capaz de:
 - Crear desde cero dos funciones Lambda en la región **us-west-2 (Oregón)**:
-- Una función que procese archivos de un bucket S3 (`s3_data_processor`)
-- Otra que reciba datos desde API Gateway (`api_data_receiver`)
+  - Una función que procese archivos de un bucket S3 (`s3_data_processor`).
+  - Otra que reciba datos desde API Gateway (`api_data_receiver`).
 - Con enfoque en ingeniería de datos, seguridad y buenas prácticas de configuración.
 
-## Requisitos
+## 📝 Requisitos previos:
+- Debes tener acceso a la consola de AWS como usuario IAM, con permisos para Lambda, IAM y CloudWatch.
+- Asegúrate de contar con un bucket de S3 previamente creado: `lab-databucket-xxxxx`.
 
-- Acceso a la consola de AWS como usuario IAM con permisos para Lambda, IAM y CloudWatch.
-- Bucket de S3 previamente creado: `lab-databucket-xxxxx`.
+## 🕒 Duración aproximada:
+- 120 minutos.
 
-## Duración aproximada
-
-- 120 minutos
-
-## Región de AWS
-
-- us-west-2 (Oregón)
+## 📍 Región de AWS:
+- us-west-2 (Oregón).
 
 ---
 
-**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab3.html)** | **[Lista General](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab5.html)**
+**[⬅️ Atrás](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab3.html)** | **[Lista general](https://netec-mx.github.io/TPRACT_INGDAT_Priv/)** | **[Siguiente ➡️](https://netec-mx.github.io/TPRACT_INGDAT_Priv/Capítulo3/lab5.html)**
 
 ---
 
@@ -32,25 +29,30 @@
 
 **Descripción:** Acceder como usuario IAM.
 
-### Tarea 1.1
+## 📋 Instrucciones:
 
-- **Paso 1.** Ir a [AWS Console](https://aws.amazon.com/console)
+### Tarea 1: Iniciar sesión en la consola de AWS.
 
-- **Paso 2.** Clic en **Sign in**
+**Descripción:** Accede como usuario IAM.
 
-- **Paso 3.** Iniciar sesión con:
+- **Paso 1.** Dirígete a [AWS Console](https://aws.amazon.com/console).
 
-  - Account ID or alias: `Cuenta asignada en el curso`
-  - IAM username: `Asignado en el curso`
-  - Password: `Asignada en el curso`
+- **Paso 2.** Haz clic en **Sign in**.
 
-- **Paso 4.** Verificar que estás en la región `us-west-2`
+- **Paso 3.** Inicia sesión con:
+
+  - **Account ID or alias:** `Cuenta asignada en el curso`
+  - **IAM username:** `Asignado en el curso`
+  - **Password:** `Asignada en el curso`
+
+- **Paso 4.** Verifica que estás en la región `us-west-2`.
 
   ![awstpract1](../images/lab12/img1.png)  
 
 > **TAREA FINALIZADA**
 
-**Resultado esperado:** Acceso exitoso a la consola.
+### Resultado esperado:
+Obtendrás el acceso exitoso a la consola.
 
 ---
 
@@ -58,7 +60,7 @@
 
 **Descripción:** Crear una función Lambda en Python que procese eventos de archivos en un bucket S3.
 
-### Tarea 2.1 – Crear la función
+### Tarea 2.1. Crear la función
 
 - **Paso 1.** Buscar y entrar al servicio **AWS Lambda**.
 
